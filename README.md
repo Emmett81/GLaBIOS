@@ -39,6 +39,7 @@ Copyright &copy; 2022-2025, [640KB](mailto:640kb@glabios.org) and contributors.
 - [VirtualXT](https://virtualxt.org)
 - [Book 8088](https://github.com/640-KB/GLaBIOS/releases/v0.2.5#beta) (beta)
 - Compaq Portable (beta)
+- Tulip PC Compact 2
 
 ### Companion ROMs
 

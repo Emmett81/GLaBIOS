@@ -99,6 +99,7 @@ ARCH_BOOK88		EQU	'B'			; Book 8088
 ARCH_CPQ		EQU	'Q'			; Compaq Portable XT
 ARCH_VIRTUALXT	EQU	'J'			; VirtualXT Emulator
 ARCH_NEST		EQU	'N'			; Juko Nest N3 (D-11 chipset)
+ARCH_TULIP_PC2	EQU	'R'			; Tulip PC Compact 2
 
 ;
 ; CPU Instruction Set Target
@@ -166,6 +167,7 @@ ARCH_TYPE		EQU	ARCH_TURBO		; Standard Turbo
 	IFNDEF ARCH_SUB_TYPE
 ;ARCH_SUB_TYPE	EQU	ARCH_5160v2		; PC 5160v2/v3 (TYPE ARCH_5160)
 ;ARCH_SUB_TYPE	EQU	ARCH_M88		; micro_8088/NuXT (TYPE ARCH_FE2010)
+;ARCH_SUB_TYPE	EQU	ARCH_TULIP_PC2	; Tulip PC Compact 2 (TYPE ARCH_FE2010)
 ;ARCH_SUB_TYPE	EQU	ARCH_MIST		; PCXT_MiSTer (TYPE ARCH_EMU)
 ;ARCH_SUB_TYPE	EQU	ARCH_MARTY		; MartyPC Emulator (TYPE ARCH_TURBO)
 ;ARCH_SUB_TYPE	EQU	ARCH_VIRTUALXT	; VirtualXT Emulator (TYPE ARCH_TURBO)
@@ -455,6 +457,15 @@ RAM_PARITY		=	0			; disable memory parity check
 CGA_SNOW_REMOVE	=	0			; disable snow removal
 FE_CPU_CFG		=	110b			; boot to 9.54 MHz, 2 RAM WS
 OEM_KB_EXT		=	0			; uses AT2XTKB keyboard interface
+	ENDIF
+
+	IF ARCH_SUB_TYPE EQ ARCH_TULIP_PC2
+;----------------------------------------------------------------------------;
+; Additional Configuration for Tulip PC Compact 2
+;
+;CPU_TYPE		=	CPU_V20		; factory equipped with NEC V20 CPU
+RAM_PARITY		=	0			; disable memory parity check
+FE_CPU_CFG		=	110b		; boot to 9.54 MHz, 2 RAM WS
 	ENDIF
 	ENDIF
 
